@@ -1,6 +1,6 @@
 extends CharacterBody3D
 # Character movement constants
-const SPEED = 5.0
+const SPEED = 3.0
 const JUMP_VELOCITY = 4.5
 
 # Track mouse capture state
