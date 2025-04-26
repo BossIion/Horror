@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0wxj87jcqmwt"]
+
+[ext_resource type="PackedScene" uid="uid://yxeas6n8tjjf" path="res://scenes/character_body_3d.tscn" id="1_uign1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uign1"]
+albedo_color = Color(0.0235294, 1, 0.0470588, 0.733333)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nfy4j"]
+albedo_color = Color(0.796078, 0.215686, 0.00392157, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Map" type="Node" parent="."]
+
+[node name="Baseplate" type="CSGBox3D" parent="Map"]
+transform = Transform3D(282.932, 0, 0, 0, 0.0171532, 0, 0, 0, 308.087, 0, -3.89493, 0)
+use_collision = true
+material = SubResource("StandardMaterial3D_uign1")
+
+[node name="Floors" type="Node" parent="Map"]
+
+[node name="basement" type="CSGBox3D" parent="Map/Floors"]
+transform = Transform3D(16.8206, 0, 0, 0, 0.13097, 0, 0, 0, 34.0087, 3.41674, -0.173282, 0.550567)
+use_collision = true
+size = Vector3(1.02002, 1, 1)
+
+[node name="Floor1" type="CSGBox3D" parent="Map/Floors"]
+transform = Transform3D(16.8206, 0, 0, 0, 0.13097, 0, 0, 0, 17.5524, 3.58511, 7.04769, 0.550567)
+use_collision = true
+
+[node name="Stair hole" type="CSGBox3D" parent="Map/Floors/Floor1"]
+transform = Transform3D(0.253202, 0, 0, 0, 2.07557, 0, 0, 0, 0.114514, -0.34465, 0.103138, 0.401962)
+operation = 2
+use_collision = true
+
+[node name="stairs" type="CSGBox3D" parent="Map/Floors/Floor1"]
+transform = Transform3D(0.650041, 0.0278405, 0, -73.4546, 4.06383, 0, 0, 0, 0.0926215, -0.212878, -30.8834, 0.40011)
+use_collision = true
+size = Vector3(1, 1, 1.13196)
+
+[node name="Floor2" type="CSGBox3D" parent="Map/Floors"]
+transform = Transform3D(-0.705227, 0, 31.4266, 0, 0.13097, 0, -28.3297, 0, -0.782321, 6.86034, 13.852, 0.550567)
+use_collision = true
+material = SubResource("StandardMaterial3D_nfy4j")
+
+[node name="Stair hole2" type="CSGBox3D" parent="Map/Floors/Floor2"]
+transform = Transform3D(0.179192, 0, 2.32831e-10, 0, 2.07557, 0, -1.39698e-09, 0, 0.0642448, -0.240335, 0.103142, 0.0960189)
+operation = 2
+use_collision = true
+
+[node name="stairs2" type="CSGBox3D" parent="Map/Floors/Floor2"]
+transform = Transform3D(0.246628, 0.0100884, 0.00113044, -51.9249, 2.76342, -5.60635e-09, -0.00442497, -0.000108992, 0.0564869, -0.21009, -26.9088, 0.0941493)
+use_collision = true
+size = Vector3(1, 1, 1.13196)
+
+[node name="Walls" type="Node" parent="Map"]
+
+[node name="Outside_wall1" type="CSGBox3D" parent="Map/Walls"]
+transform = Transform3D(0.217659, 0, 0, 0, 14.0776, 0, 0, 0, 27.7456, -5.20816, 6.82714, 0)
+use_collision = true
+
+[node name="Outside_wall2" type="CSGBox3D" parent="Map/Walls"]
+transform = Transform3D(0.217659, 0, 0, 0, 14.0776, 0, 0, 0, 27.7456, 11.9286, 6.82714, 0)
+use_collision = true
+
+[node name="Outside_wall3" type="CSGBox3D" parent="Map/Walls"]
+transform = Transform3D(-0.00242474, 0, 34.3586, 0, 30.8698, 0, -0.217065, 0, -0.383804, 8.65278, 6.81015, -13.854)
+use_collision = true
+
+[node name="Outside_wall4" type="CSGBox3D" parent="Map/Walls"]
+transform = Transform3D(-0.00242474, 0, 34.3586, 0, 30.8698, 0, -0.217065, 0, -0.383804, 8.65278, 6.81015, 14.5758)
+use_collision = true
+
+[node name="Outside_wall5" type="CSGBox3D" parent="Map/Walls"]
+transform = Transform3D(0.00117764, 0, 27.7452, 0, 6.70629, 0, -0.217655, 0, 0.150117, -0.179877, 10.4432, 9.47298)
+use_collision = true
+
+[node name="Outside_wall6" type="CSGBox3D" parent="Map/Walls"]
+transform = Transform3D(0.00117764, 0, 27.7452, 0, 6.70629, 0, -0.217655, 0, 0.150117, -0.179877, 10.4432, -8.33226)
+use_collision = true
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_uign1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.785, 8.59369, -5.26073)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="CharacterBody3D"]
+light_color = Color(0.762276, 0.39894, 0.227706, 1)
+light_energy = 2.131
+light_volumetric_fog_energy = 5.04
+light_size = 0.495
+distance_fade_enabled = true
