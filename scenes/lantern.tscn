@@ -1,4 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://tri5dywkgf2t"]
+[gd_scene load_steps=3 format=3 uid="uid://tri5dywkgf2t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhuhv"]
+albedo_color = Color(0.303553, 0.168414, 0.0710614, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqqsp"]
 transparency = 2
@@ -11,6 +14,7 @@ emission = Color(1, 0.678431, 0.282353, 1)
 [node name="lantern" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
+material = SubResource("StandardMaterial3D_hhuhv")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0148926, 0.0112305, -0.043457)
@@ -26,7 +30,31 @@ size = Vector3(3.60352, 0.824768, 0.745361)
 material = SubResource("StandardMaterial3D_jqqsp")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.628348)
+light_color = Color(1, 0.680149, 0.143412, 1)
+light_indirect_energy = 1.31
+light_size = 5.0
+distance_fade_enabled = true
+distance_fade_begin = 0.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.689003, 0, 0.221834)
 light_color = Color(1, 0.680149, 0.143412, 1)
 light_size = 0.5
-shadow_enabled = true
 distance_fade_enabled = true
+distance_fade_begin = 0.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.410826, 0, 0.221834)
+light_color = Color(1, 0.680149, 0.143412, 1)
+light_size = 0.5
+distance_fade_enabled = true
+distance_fade_begin = 0.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0110818, 0, -0.610189)
+light_color = Color(1, 0.680149, 0.143412, 1)
+light_size = 2.2
+distance_fade_enabled = true
+distance_fade_begin = 0.0
+distance_fade_length = 270.89
