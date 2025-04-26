@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0wxj87jcqmwt"]
+[gd_scene load_steps=5 format=3 uid="uid://c0wxj87jcqmwt"]
 
 [ext_resource type="PackedScene" uid="uid://yxeas6n8tjjf" path="res://scenes/character_body_3d.tscn" id="1_uign1"]
+[ext_resource type="PackedScene" uid="uid://tri5dywkgf2t" path="res://scenes/lantern.tscn" id="2_nfy4j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uign1"]
 albedo_color = Color(0.0235294, 1, 0.0470588, 0.733333)
@@ -82,9 +83,5 @@ use_collision = true
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_uign1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.785, 8.59369, -5.26073)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="CharacterBody3D"]
-light_color = Color(0.762276, 0.39894, 0.227706, 1)
-light_energy = 2.131
-light_volumetric_fog_energy = 5.04
-light_size = 0.495
-distance_fade_enabled = true
+[node name="lantern" parent="CharacterBody3D" instance=ExtResource("2_nfy4j")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -0.890717)
