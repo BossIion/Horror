@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://tri5dywkgf2t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqqsp"]
+transparency = 2
+alpha_scissor_threshold = 1.0
+alpha_antialiasing_mode = 0
+albedo_color = Color(0.993132, 0.718485, 0.185775, 1)
+emission_enabled = true
+emission = Color(1, 0.678431, 0.282353, 1)
+
+[node name="lantern" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0148926, 0.0112305, -0.043457)
+operation = 2
+size = Vector3(0.76709, 0.698242, 1.78027)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.816406, 0.016449, -0.00891113)
+operation = 2
+size = Vector3(3.60352, 0.824768, 0.745361)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+material = SubResource("StandardMaterial3D_jqqsp")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.680149, 0.143412, 1)
+light_size = 0.5
+shadow_enabled = true
+distance_fade_enabled = true
