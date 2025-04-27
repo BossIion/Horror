@@ -111,4 +111,4 @@ libraries = {
 autoplay = "Lantern_swing"
 playback_auto_capture_duration = 0.0
 playback_auto_capture_transition_type = 2
-speed_scale = 0.04
+speed_scale = 0.1

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0wxj87jcqmwt"]
+[gd_scene load_steps=6 format=3 uid="uid://c0wxj87jcqmwt"]
 
 [ext_resource type="PackedScene" uid="uid://yxeas6n8tjjf" path="res://scenes/character_body_3d.tscn" id="1_uign1"]
 [ext_resource type="PackedScene" uid="uid://tri5dywkgf2t" path="res://scenes/lantern.tscn" id="2_nfy4j"]
+[ext_resource type="PackedScene" uid="uid://b038j3x1xfc6x" path="res://scenes/key.tscn" id="3_vxp2g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uign1"]
 albedo_color = Color(0.0235294, 1, 0.0470588, 0.733333)
@@ -80,8 +81,11 @@ use_collision = true
 transform = Transform3D(0.00117764, 0, 27.7452, 0, 6.70629, 0, -0.217655, 0, 0.150117, -0.179877, 10.4432, -8.33226)
 use_collision = true
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_uign1")]
+[node name="Player" parent="." instance=ExtResource("1_uign1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.785, 8.59369, -5.26073)
 
-[node name="lantern" parent="CharacterBody3D" instance=ExtResource("2_nfy4j")]
+[node name="lantern" parent="Player" instance=ExtResource("2_nfy4j")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.336114, 0, -1.16372)
+
+[node name="Key" parent="." instance=ExtResource("3_vxp2g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.47579, 7.26844, 1.62843)

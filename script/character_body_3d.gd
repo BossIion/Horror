@@ -68,7 +68,8 @@ func _mouse_movement(event: InputEvent) -> void:
 #func check_for_shooting():
 	#if Input.is_action_pressed("shoot"):
 	#	shoot()
-
+func pickup_key():
+	print("Key collected!")
 #func shoot():
 	#var bullet_instance = bullet_scene.instantiate()
 	#get_tree().root.add_child(bullet_instance) # add the projectile
