@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://yxeas6n8tjjf"]
+[gd_scene load_steps=7 format=3 uid="uid://yxeas6n8tjjf"]
 
 [ext_resource type="Script" uid="uid://dagafqug3pqy" path="res://script/character_body_3d.gd" id="1_cvunv"]
+[ext_resource type="PackedScene" uid="uid://tri5dywkgf2t" path="res://scenes/lantern.tscn" id="2_o7tup"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o7tup"]
 
@@ -10,15 +11,37 @@
 albedo_color = Color(0.270588, 0.231373, 1, 1)
 emission = Color(0.65098, 0.403922, 0, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_o7tup"]
+size = Vector3(0.244568, 0.0654907, 0.0728877)
+
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_cvunv")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.565437, 0.235253)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.565437, 0.316262)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0111135)
 shape = SubResource("CapsuleShape3D_o7tup")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
 mesh = SubResource("CapsuleMesh_cvunv")
 material = SubResource("StandardMaterial3D_o7tup")
+
+[node name="lantern" parent="." instance=ExtResource("2_o7tup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.758855, -0.0839307, -0.652746)
+collision_layer = 128
+collision_mask = 128
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.758855, 0.488012, -0.622693)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0388673, 0.0304898, 0.00775301)
+shape = SubResource("BoxShape3D_o7tup")
+
+[node name="PinJoint3D" type="PinJoint3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.756671, 0.631114, -0.63781)
+node_a = NodePath("../StaticBody3D")
+node_b = NodePath("../lantern")
+params/damping = 0.47

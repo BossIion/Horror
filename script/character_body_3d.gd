@@ -1,6 +1,6 @@
 extends CharacterBody3D
 # Character movement constants
-const SPEED = 3.0
+var SPEED = 3.0
 const JUMP_VELOCITY = 4.5
 
 # Track mouse capture state
@@ -78,9 +78,15 @@ func pickup_key():
 	#bullet_instance._shoot($Camera3D.get_global_transform().basis.z)
 	#print($Camera3D.get_global_transform().basis.z)
 # Function to process input events
+func sprint():
+	if Input.is_action_just_pressed("shift"):
+		SPEED = 5
+	if Input.is_action_just_released("shift"):
+		SPEED = 3
 func _input(event: InputEvent) -> void:
 	# Call mouse movement handler
 	#check_for_shooting()
 	_mouse_movement(event)
+	sprint()
 	# Also check for mouse capture/release
 	_capture_release_mouse_button()

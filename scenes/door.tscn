@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://jjcives4t0yv"]
+
+[ext_resource type="Script" uid="uid://jlalnw3bax3y" path="res://script/opendoor.gd" id="1_ba8gm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v6xrn"]
+albedo_color = Color(0.194892, 1.18823e-06, 7.15945e-07, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0phs7"]
+albedo_color = Color(0.196078, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hpvv5"]
+size = Vector3(1.98267, 2.00311, 0.241211)
+
+[node name="Door" type="Node3D"]
+script = ExtResource("1_ba8gm")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.945318, -0.325745, 0.272522, 0.398926)
+use_collision = true
+size = Vector3(2.00769, 1.54504, 0.202148)
+material = SubResource("StandardMaterial3D_v6xrn")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1.86842, 0, 0, 0, 1, 0, 0, 0, 0.163774, -0.327453, 1.00038, 0.399846)
+use_collision = true
+radius = 0.575179
+material = SubResource("StandardMaterial3D_0phs7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.329468, 0.501556, 0.395311)
+shape = SubResource("BoxShape3D_hpvv5")
