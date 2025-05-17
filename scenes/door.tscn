@@ -1,15 +1,10 @@
-<<<<<<< HEAD
 [gd_scene load_steps=7 format=3 uid="uid://jjcives4t0yv"]
-=======
-[gd_scene load_steps=4 format=3 uid="uid://jjcives4t0yv"]
->>>>>>> origin/main
 
 [ext_resource type="Script" uid="uid://jlalnw3bax3y" path="res://script/opendoor.gd" id="1_ba8gm"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvdjg"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v6xrn"]
 albedo_color = Color(0.194892, 1.18823e-06, 7.15945e-07, 1)
 
-<<<<<<< HEAD
 [sub_resource type="BoxShape3D" id="BoxShape3D_hpvv5"]
 size = Vector3(1.98267, 2.31078, 0.241211)
 
@@ -93,24 +88,3 @@ libraries = {
 &"": SubResource("AnimationLibrary_83dcw")
 }
 playback_auto_capture = false
-=======
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hpvv5"]
-data = PackedVector3Array(-0.800812, -1.27542, 0.101074, -0.800812, -1.27542, -0.101074, -0.800812, 1.27542, -0.101074, 0.800812, -1.27542, -0.101074, -0.800812, -1.27542, -0.101074, -0.800812, -1.27542, 0.101074, -0.800812, 1.27542, -0.101074, -0.800812, -1.27542, -0.101074, 0.800812, -1.27542, -0.101074, -0.800812, 1.27542, -0.101074, -0.800812, 1.27542, 0.101074, -0.800812, -1.27542, 0.101074, -0.800812, -1.27542, 0.101074, -0.800812, 1.27542, 0.101074, 0.800812, 1.27542, 0.101074, 0.800812, 1.27542, 0.101074, -0.800812, 1.27542, 0.101074, -0.800812, 1.27542, -0.101074, -0.800812, -1.27542, 0.101074, 0.800812, -1.27542, 0.101074, 0.800812, -1.27542, -0.101074, 0.800812, 1.27542, 0.101074, 0.800812, -1.27542, 0.101074, -0.800812, -1.27542, 0.101074, 0.800812, -1.27542, -0.101074, 0.800812, -1.27542, 0.101074, 0.800812, 1.27542, 0.101074, 0.800812, -1.27542, -0.101074, 0.800812, 1.27542, -0.101074, -0.800812, 1.27542, -0.101074, -0.800812, 1.27542, -0.101074, 0.800812, 1.27542, -0.101074, 0.800812, 1.27542, 0.101074, 0.800812, 1.27542, 0.101074, 0.800812, 1.27542, -0.101074, 0.800812, -1.27542, -0.101074)
-
-[node name="Door" type="Area3D"]
-disable_mode = 1
-script = ExtResource("1_ba8gm")
-
-[node name="PivotPoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00674248, 0.0221035, -0.00627935)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="PivotPoint"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.945318, -0.528778, 0.775422, 0.0142747)
-use_collision = true
-size = Vector3(1.60162, 2.55084, 0.202148)
-material = SubResource("StandardMaterial3D_uvdjg")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.945318, -0.522036, 0.797526, 0.0079954)
-shape = SubResource("ConcavePolygonShape3D_hpvv5")
->>>>>>> origin/main
