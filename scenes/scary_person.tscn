@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfkq2a0faildo"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_r7dwr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ylstn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k28d2"]
+albedo_color = Color(1, 0, 0, 0.639216)
+billboard_mode = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_piqmv"]
+albedo_color = Color(1, 0, 0, 0.356863)
+billboard_mode = 1
+
+[node name="Scary person" type="Node3D"]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+mesh = SubResource("CapsuleMesh_r7dwr")
+material = SubResource("StandardMaterial3D_ylstn")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGMesh3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.196158, 0.43082, 0.43408)
+radius = 0.100533
+material = SubResource("StandardMaterial3D_k28d2")
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="CSGMesh3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.128954, 0.429446, 0.441869)
+radius = 0.100533
+material = SubResource("StandardMaterial3D_piqmv")

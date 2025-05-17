@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://tri5dywkgf2t" path="res://scenes/lantern.tscn" id="2_o7tup"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o7tup"]
+radius = 0.431232
+height = 1.21621
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cvunv"]
 
@@ -21,7 +23,7 @@ script = ExtResource("1_cvunv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.565437, 0.316262)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0111135)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.336533, -0.0111135)
 shape = SubResource("CapsuleShape3D_o7tup")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]

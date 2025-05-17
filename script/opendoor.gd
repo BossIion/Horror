@@ -7,6 +7,8 @@ func _ready():
 func _on_area_entered(area):
 	if area.name == "Key":
 		open_door()
+		area.queue_free()
+		$DoorArea/CollisionShape3D.queue_free()
 func open_door():
 	animation_player.play("DoorSwing")
 	

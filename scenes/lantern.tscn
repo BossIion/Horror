@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://tri5dywkgf2t"]
+[gd_scene load_steps=5 format=3 uid="uid://tri5dywkgf2t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jqqsp"]
 size = Vector3(1, 1.53662, 1)
@@ -14,8 +14,16 @@ albedo_color = Color(0.993132, 0.718485, 0.185775, 1)
 emission_enabled = true
 emission = Color(1, 0.678431, 0.282353, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uxgnm"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.247059)
+metallic = 1.0
+roughness = 0.3
+
 [node name="lantern" type="RigidBody3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+collision_layer = 1073741824
+collision_mask = 1073741824
 
 [node name="CSGTorus3D" type="CSGTorus3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.00132642, 0.499998, 0, -0.499998, 0.00132642, 0, 0.428558, 0)
@@ -75,3 +83,25 @@ light_size = 2.2
 distance_fade_enabled = true
 distance_fade_begin = 0.0
 distance_fade_length = 270.89
+
+[node name="Glass" type="Node" parent="CSGBox3D"]
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D/Glass"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.113525, -0.00134277, -0.000968933)
+size = Vector3(0.0917969, 0.797852, 0.7995)
+material = SubResource("StandardMaterial3D_uxgnm")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGBox3D/Glass"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.115635, -0.00134277, -0.000968933)
+size = Vector3(0.0917969, 0.797852, 0.7995)
+material = SubResource("StandardMaterial3D_uxgnm")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGBox3D/Glass"]
+transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-08, -0.0138324, -0.00134277, 0.115168)
+size = Vector3(0.0917969, 0.797852, 0.7995)
+material = SubResource("StandardMaterial3D_uxgnm")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGBox3D/Glass"]
+transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-08, -0.0138324, -0.00134277, -0.108887)
+size = Vector3(0.0917969, 0.797852, 0.7995)
+material = SubResource("StandardMaterial3D_uxgnm")

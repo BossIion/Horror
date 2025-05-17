@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7rdhnxjvhstp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_af0m4"]
+transparency = 4
+metallic = 1.0
+roughness = 0.0
+refraction_scale = 1.0
+grow_amount = -5.053
+
+[node name="mirror" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.411377)
+size = Vector3(1, 1, 0.177246)
+material = SubResource("StandardMaterial3D_af0m4")

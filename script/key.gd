@@ -12,28 +12,24 @@ func _ready():
 func _on_body_entered(body):
 	if body.name == "Player":  # Check if the body is the player
 		call_deferred("_pickup_key", body)  # Call deferred function to pickup the key
+
 func on_body_entered(door):
 	if door.name == "Door":  # Check if the body is the player
 		if door.has_method("open_door"):
+			self.queue_free()
 			door.open_door()
 # Handle the pickup logic
 func _pickup_key(body):
 	if not body:
 		return
-
 	player = body
-
-
 	set_as_top_level(true) 
-
-
 	get_parent().remove_child(self)
-
 	body.add_child(self) 
-
 	if body.has_method("pickup_key"):
 		body.pickup_key()  
-
+		
+		
 func _process(_delta):
 	if player:
 		# Continuously update the key's position relative to the player
