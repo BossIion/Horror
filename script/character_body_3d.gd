@@ -64,20 +64,8 @@ func _mouse_movement(event: InputEvent) -> void:
 		rotation_degrees.y -= rotation_delta.x  # Horizontal rotation
 		rotation_degrees.x -= rotation_delta.y  # Vertical rotation
 		rotation_degrees.x = clamp(rotation_degrees.x, -90, 90)  # Limit vertical rotation to avoid flipping
-###
-#func check_for_shooting():
-	#if Input.is_action_pressed("shoot"):
-	#	shoot()
-func pickup_key():
-	print("Key collected!")
-#func shoot():
-	#var bullet_instance = bullet_scene.instantiate()
-	#get_tree().root.add_child(bullet_instance) # add the projectile
+		
 
-	#bullet_instance.global_transform = $ProjectileSpawnPoint.global_transform
-	#bullet_instance._shoot($Camera3D.get_global_transform().basis.z)
-	#print($Camera3D.get_global_transform().basis.z)
-# Function to process input events
 func sprint():
 	if Input.is_action_just_pressed("shift"):
 		SPEED = 5
