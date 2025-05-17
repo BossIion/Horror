@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 extends Node3D
 var animation_player: AnimationPlayer
 func _ready():
@@ -11,8 +11,6 @@ func _on_area_entered(area):
 func open_door():
 	animation_player.play("DoorSwing")
 	
-=======
-extends Area3D
 var Key_Touched = false
 func _on_body_entered(body):	
 	print("Body entered: ", body.name)  # Debugging: print the body name
@@ -27,4 +25,3 @@ func _on_body_entered(body):
 		$CollisionShape3D.global.position = $PivotPoint/CSGBox3D.global.position
 
 		
->>>>>>> origin/main
