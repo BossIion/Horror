@@ -1,29 +1,48 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfkq2a0faildo"]
+[gd_scene load_steps=7 format=3 uid="uid://dfkq2a0faildo"]
+
+[ext_resource type="Script" uid="uid://dt3k6qr83w61u" path="res://scenes/scary_person.gd" id="1_ylstn"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_r7dwr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ylstn"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k28d2"]
-albedo_color = Color(1, 0, 0, 0.639216)
-billboard_mode = 1
+billboard_mode = 2
+billboard_keep_scale = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_piqmv"]
 albedo_color = Color(1, 0, 0, 0.356863)
-billboard_mode = 1
+billboard_mode = 2
+billboard_keep_scale = true
 
-[node name="Scary person" type="Node3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k28d2"]
+albedo_color = Color(1, 0, 0, 0.639216)
+billboard_mode = 2
+billboard_keep_scale = true
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ylstn"]
+size = Vector3(1, 1.98816, 1)
+
+[node name="Scary" type="Node3D"]
+script = ExtResource("1_ylstn")
+
+[node name="Scary3" type="CSGMesh3D" parent="."]
 mesh = SubResource("CapsuleMesh_r7dwr")
 material = SubResource("StandardMaterial3D_ylstn")
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGMesh3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.196158, 0.43082, 0.43408)
-radius = 0.100533
-material = SubResource("StandardMaterial3D_k28d2")
-
-[node name="CSGSphere3D2" type="CSGSphere3D" parent="CSGMesh3D"]
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="Scary3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.128954, 0.429446, 0.441869)
 radius = 0.100533
 material = SubResource("StandardMaterial3D_piqmv")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Scary3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.233646, 0.426759, 0.43408)
+radius = 0.100533
+material = SubResource("StandardMaterial3D_k28d2")
+
+[node name="Scary" type="Area3D" parent="Scary3"]
+disable_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scary3/Scary"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0429077, 0)
+shape = SubResource("BoxShape3D_ylstn")
+
+[connection signal="body_entered" from="Scary3/Scary" to="." method="_on_scary_body_entered"]

@@ -64,8 +64,16 @@ func _mouse_movement(event: InputEvent) -> void:
 		rotation_degrees.y -= rotation_delta.x  # Horizontal rotation
 		rotation_degrees.x -= rotation_delta.y  # Vertical rotation
 		rotation_degrees.x = clamp(rotation_degrees.x, -90, 90)  # Limit vertical rotation to avoid flipping
-		
-
+func die(body):
+	print("hi")
+	if body.name == "Scary":
+		var root = get_tree().get_root()
+		var screen = $"../Death_Screen"
+		for child in root.get_children():
+			if child != screen:
+				root.remove_child(child)
+				child.queue_free()
+		screen.visible = true
 func sprint():
 	if Input.is_action_just_pressed("shift"):
 		SPEED = 5
