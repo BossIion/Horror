@@ -137,7 +137,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.47579, 0.0820169, 1.62843)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.88973, 0.936537, 10.3286)
 
 [node name="Door" parent="." instance=ExtResource("3_mlytl")]
-transform = Transform3D(0.00938969, 0, 0.999956, 0, 1, 0, -0.999956, 0, 0.00938969, 3.92437, 0.113381, 7.29952)
+transform = Transform3D(0.00938624, 0, 0.999956, 0, 1, 0, -0.999956, 0, 0.00938624, 3.92437, 0.113381, 7.29952)
 
 [node name="DoorSwing" type="AnimationPlayer" parent="Door"]
 libraries = {
