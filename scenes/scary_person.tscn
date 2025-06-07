@@ -5,17 +5,14 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_r7dwr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ylstn"]
-billboard_mode = 2
 billboard_keep_scale = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_piqmv"]
 albedo_color = Color(1, 0, 0, 0.356863)
-billboard_mode = 2
 billboard_keep_scale = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k28d2"]
 albedo_color = Color(1, 0, 0, 0.639216)
-billboard_mode = 2
 billboard_keep_scale = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ylstn"]
@@ -25,24 +22,46 @@ size = Vector3(1, 1.98816, 1)
 script = ExtResource("1_ylstn")
 
 [node name="Scary3" type="CSGMesh3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_r7dwr")
 material = SubResource("StandardMaterial3D_ylstn")
 
 [node name="CSGSphere3D2" type="CSGSphere3D" parent="Scary3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.128954, 0.429446, 0.441869)
+transform = Transform3D(-0.998462, 0, 0.0554382, 0, 1, 0, -0.0554382, 0, -0.998462, 0.153252, 0.429446, -0.434041)
 radius = 0.100533
 material = SubResource("StandardMaterial3D_piqmv")
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="Scary3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.233646, 0.426759, 0.43408)
+transform = Transform3D(-0.998462, 0, 0.0554382, 0, 1, 0, -0.0554382, 0, -0.998462, -0.209222, 0.426759, -0.446365)
 radius = 0.100533
 material = SubResource("StandardMaterial3D_k28d2")
 
 [node name="Scary" type="Area3D" parent="Scary3"]
+transform = Transform3D(-0.998462, 0, 0.0554382, 0, 1, 0, -0.0554382, 0, -0.998462, 0, 0, 0)
 disable_mode = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scary3/Scary"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0429077, 0)
 shape = SubResource("BoxShape3D_ylstn")
+
+[node name="Forward" type="RayCast3D" parent="Scary3"]
+transform = Transform3D(-0.0258574, -0.0353831, -0.999039, -0.999666, 0.000380062, 0.0258601, -0.000535314, 0.999374, -0.0353811, 0.00448005, 0.000165075, -0.524665)
+collide_with_areas = true
+
+[node name="Left1" type="RayCast3D" parent="Scary3"]
+transform = Transform3D(-0.881949, 0.471344, 0.00116514, 0.0372307, 0.0671991, 0.997045, 0.469872, 0.879386, -0.0768146, -0.220549, -0.0229222, -0.419897)
+collide_with_areas = true
+
+[node name="Left2" type="RayCast3D" parent="Scary3"]
+transform = Transform3D(-0.472393, 0.881362, 0.00679548, 0.0372736, 0.0122737, 0.99923, 0.880599, 0.472283, -0.0386495, -0.38485, -0.00425951, -0.288255)
+collide_with_areas = true
+
+[node name="Right1" type="RayCast3D" parent="Scary3"]
+transform = Transform3D(-0.815669, -0.578519, 0.00116513, -0.0434912, 0.0633274, 0.997045, -0.576883, 0.813207, -0.0768146, 0.255098, -0.0254656, -0.445695)
+collide_with_areas = true
+
+[node name="Right2" type="RayCast3D" parent="Scary3"]
+transform = Transform3D(-0.299733, -0.954023, 0.00116512, -0.0729348, 0.0241322, 0.997045, -0.951231, 0.298762, -0.0768146, 0.310271, -0.01204, -0.270596)
+collide_with_areas = true
 
 [connection signal="body_entered" from="Scary3/Scary" to="." method="_on_scary_body_entered"]
