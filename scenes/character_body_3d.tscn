@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://yxeas6n8tjjf"]
+[gd_scene load_steps=8 format=3 uid="uid://yxeas6n8tjjf"]
 
 [ext_resource type="Script" uid="uid://dagafqug3pqy" path="res://script/character_body_3d.gd" id="1_cvunv"]
 [ext_resource type="PackedScene" uid="uid://tri5dywkgf2t" path="res://scenes/lantern.tscn" id="2_o7tup"]
+[ext_resource type="AudioStream" uid="uid://biqcup3k01m5a" path="res://assets/heavy-footsteps-walking-35722.mp3" id="3_nr340"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o7tup"]
 radius = 0.431232
@@ -47,3 +48,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.756671, 0.631114, -0.63781)
 node_a = NodePath("../StaticBody3D")
 node_b = NodePath("../lantern")
 params/damping = 0.47
+
+[node name="Walk" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.758855, 0.488012, -0.622693)
+stream = ExtResource("3_nr340")

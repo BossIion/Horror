@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://beemo63poeapb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hjuyy"]
+emission_enabled = true
+emission = Color(0.87451, 0.454902, 0.0941176, 1)
+emission_energy_multiplier = 3.54
+refraction_enabled = true
+
+[node name="Lamp" type="Node3D"]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.188934, 0)
+radius = 0.0615234
+height = 0.57019
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.0337064, 0.999432, -0.000436528, -0.999425, 0.0337078, 0.00378331, 0.00379588, 0.00030876, 0.999993, 0.133047, -0.0477695, -0.0201961)
+radius = 0.0615234
+height = 0.242126
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00291282, 0.495518, 0.00486231)
+radius = 0.180442
+material = SubResource("StandardMaterial3D_hjuyy")

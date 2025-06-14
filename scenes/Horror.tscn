@@ -1,11 +1,38 @@
-[gd_scene load_steps=12 format=3 uid="uid://c0wxj87jcqmwt"]
+[gd_scene load_steps=16 format=3 uid="uid://c0wxj87jcqmwt"]
 
 [ext_resource type="PackedScene" uid="uid://yxeas6n8tjjf" path="res://scenes/character_body_3d.tscn" id="1_uign1"]
 [ext_resource type="PackedScene" uid="uid://jjcives4t0yv" path="res://scenes/door.tscn" id="3_mlytl"]
 [ext_resource type="PackedScene" uid="uid://b038j3x1xfc6x" path="res://scenes/key.tscn" id="3_vxp2g"]
 [ext_resource type="PackedScene" uid="uid://c7rdhnxjvhstp" path="res://scenes/mirror.tscn" id="4_mlytl"]
-[ext_resource type="PackedScene" uid="uid://dfkq2a0faildo" path="res://scenes/scary_person.tscn" id="5_smp62"]
 [ext_resource type="PackedScene" uid="uid://di58nm1o4m7fc" path="res://scenes/death_screen.tscn" id="6_7j1xn"]
+[ext_resource type="PackedScene" uid="uid://cl2nbc8f82fip" path="res://scenes/scary_person.tscn" id="6_rq83h"]
+[ext_resource type="PackedScene" uid="uid://beemo63poeapb" path="res://scenes/lamp.tscn" id="7_rq83h"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7j1xn"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_rq83h"]
+sky_material = SubResource("ProceduralSkyMaterial_7j1xn")
+
+[sub_resource type="Environment" id="Environment_6m56o"]
+background_mode = 2
+sky = SubResource("Sky_rq83h")
+tonemap_mode = 2
+glow_enabled = true
+glow_intensity = 1.0
+glow_bloom = 0.05
+glow_hdr_threshold = 0.3
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.0148753, 0.0180037, 0.0236408, 1)
+fog_light_energy = 0.16
+fog_density = 1.0
+fog_height = 0.25
+fog_height_density = 5.7664
+fog_depth_curve = 0.217638
+fog_depth_begin = 1.0
+fog_depth_end = 7.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uign1"]
 albedo_color = Color(0.0235294, 1, 0.0470588, 0.733333)
@@ -50,7 +77,9 @@ _data = {
 }
 
 [node name="Node3D" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.403709, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6m56o")
 
 [node name="Map" type="Node" parent="."]
 
@@ -148,8 +177,24 @@ libraries = {
 [node name="mirror" parent="." instance=ExtResource("4_mlytl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.42467, 1.41484, -13.1926)
 
-[node name="Scary person" parent="." instance=ExtResource("5_smp62")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.10532, 0.488493, 0.304003)
-
 [node name="Death_Screen" parent="." instance=ExtResource("6_7j1xn")]
 visible = false
+
+[node name="Lamp" parent="." instance=ExtResource("7_rq83h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5636, 1.3072, 5.30807)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.634994, 0.516923, 0)
+light_color = Color(1, 0.490196, 0.101961, 1)
+light_energy = 6.96
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 16.0
+light_size = 0.576
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 1.0
+distance_fade_length = 7.0
+omni_attenuation = 2.0
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("6_rq83h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115744, 0.892203, 0.0932206)
