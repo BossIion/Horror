@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cl2nbc8f82fip"]
 
-[ext_resource type="Script" uid="uid://dt3k6qr83w61u" path="res://scenes/scary_person.gd" id="1_tylde"]
+[ext_resource type="Script" uid="uid://dt3k6qr83w61u" path="res://script/scary_person.gd" id="1_tylde"]
 [ext_resource type="Material" uid="uid://cmnlg4ugunrmg" path="res://assets/Eyeball.tres" id="2_k28d2"]
 [ext_resource type="AudioStream" uid="uid://cie1gwl5oqhit" path="res://assets/male-death-scream-horror-352706.mp3" id="3_piqmv"]
 

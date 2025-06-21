@@ -9,6 +9,7 @@ func _on_area_entered(area):
 		open_door()
 		area.queue_free()
 		$DoorArea/CollisionShape3D.queue_free()
+		$"../NavigationLink3D".enabled=true
 func open_door():
 	animation_player.play("DoorSwing")
 	
