@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c0wxj87jcqmwt"]
+[gd_scene load_steps=15 format=3 uid="uid://c0wxj87jcqmwt"]
 
 [ext_resource type="PackedScene" uid="uid://yxeas6n8tjjf" path="res://scenes/character_body_3d.tscn" id="1_uign1"]
 [ext_resource type="PackedScene" uid="uid://jjcives4t0yv" path="res://scenes/door.tscn" id="3_mlytl"]
@@ -7,32 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://di58nm1o4m7fc" path="res://scenes/death_screen.tscn" id="6_7j1xn"]
 [ext_resource type="PackedScene" uid="uid://beemo63poeapb" path="res://scenes/lamp.tscn" id="7_rq83h"]
 [ext_resource type="PackedScene" uid="uid://b0aa6ge3qhlg" path="res://scenes/navigation_npc.tscn" id="8_6m56o"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7j1xn"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-
-[sub_resource type="Sky" id="Sky_rq83h"]
-sky_material = SubResource("ProceduralSkyMaterial_7j1xn")
-
-[sub_resource type="Environment" id="Environment_6m56o"]
-background_mode = 2
-sky = SubResource("Sky_rq83h")
-tonemap_mode = 2
-glow_enabled = true
-glow_intensity = 1.0
-glow_bloom = 0.05
-glow_hdr_threshold = 0.3
-fog_enabled = true
-fog_mode = 1
-fog_light_color = Color(0.0148753, 0.0180037, 0.0236408, 1)
-fog_light_energy = 0.16
-fog_density = 1.0
-fog_height = 0.25
-fog_height_density = 5.7664
-fog_depth_curve = 0.217638
-fog_depth_begin = 1.0
-fog_depth_end = 7.0
+[ext_resource type="PackedScene" uid="uid://dry5prwhj734s" path="res://scenes/old_house.tscn" id="8_aalo8"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_rq83h"]
 vertices = PackedVector3Array(-15.1801, -3.62475, -13.5244, -9.18007, -3.62475, -13.5244, -8.68007, -3.62475, -14.5244, -15.1801, -3.62475, -34.0244, 24.8199, -3.62475, -14.7744, 25.0699, -3.62475, -34.0244, 26.3199, -3.62475, -14.7744, 26.5699, -3.62475, -14.0244, 50.5699, -3.62475, -14.0244, 50.5699, -3.62475, -34.0244, -4.68007, 0.37525, -16.0244, -4.68007, 0.37525, -14.5244, 11.5699, 0.37525, -14.5244, 11.5699, 0.37525, -16.0244, 26.3199, -3.62475, 15.2256, 24.8199, -3.62475, 15.2256, 25.0699, -3.62475, 23.4756, 26.5699, -3.62475, 13.9756, 50.5699, -3.62475, 23.4756, 26.3199, -3.62475, -13.2744, 24.3199, -3.62475, -13.2744, 24.3199, -3.62475, 13.7256, -8.93007, -3.62475, -13.0244, -15.1801, -3.62475, 14.7256, -9.18007, -3.62475, 14.7256, -8.93007, -3.62475, 13.9756, 11.3199, 14.3752, 4.7256, 11.3199, 14.3752, 6.7256, 22.3199, 14.3752, 6.7256, 9.81993, 14.3752, -13.0244, 9.81993, 14.3752, 4.4756, 21.8199, 14.3752, -13.2744, 9.81993, 14.3752, 13.7256, 9.56993, 14.3752, 9.7256, 8.81993, 14.3752, 9.4756, 8.56993, 14.3752, 8.7256, -8.18007, 14.3752, 13.9756, 8.56993, 14.3752, 4.7256, -8.93007, 14.3752, -12.7744, -4.43007, 0.37525, 7.4756, 1.06993, 0.37525, 7.4756, 1.31993, 0.37525, 5.9756, -4.43007, 0.37525, -13.0244, 4.81993, 0.37525, 5.9756, 5.06993, 0.37525, 7.4756, 11.0699, 0.37525, 7.4756, 11.0699, 0.37525, -13.0244, -3.68007, 7.37525, 6.2256, -3.18007, 7.62525, 6.2256, -3.18007, 7.37525, 5.7256, -3.93007, 7.37525, 5.9756, -2.18007, 7.37525, 5.7256, 8.06993, 7.37525, 2.7256, -4.43007, 7.37525, 5.9756, -2.18007, 7.62525, 6.2256, 0.069931, 7.37525, 6.2256, 8.31993, 7.37525, 5.4756, 9.06993, 7.62525, 2.7256, 9.31993, 9.87525, 4.9756, 10.5699, 9.37525, 4.4756, 10.5699, 7.37525, 2.4756, 11.0699, 7.37525, 2.4756, 11.0699, 7.37525, -7.5244, 11.0699, 7.37525, 8.7256, 11.0699, 7.37525, 5.7256, 0.319931, 7.37525, 8.7256, -4.43007, 7.37525, -7.5244, 9.31993, 12.6252, 7.7256, 9.81993, 13.6252, 8.7256, 10.3199, 13.6252, 8.7256, 11.5699, 14.3752, 9.4756, 10.3199, 14.3752, 9.7256, 22.5699, 14.3752, 13.7256, 10.5699, 14.3752, 9.4756, -3.93007, 7.62525, 8.2256, -3.93007, 7.62525, 8.7256, -3.68007, 7.37525, 7.9756, -3.93007, 7.62525, 6.9756, -3.68007, 7.37525, 7.2256, 3.56993, 0.87525, 7.9756, 3.56993, 0.87525, 7.4756, -4.43007, 7.87525, 6.9756, -4.43007, 7.87525, 8.2256, 3.06993, 0.37525, 13.9756, 3.06993, 0.37525, 9.2256, 1.31993, 0.37525, 9.2256, -4.43007, 0.37525, 13.9756, 4.81993, 0.37525, 9.2256, 11.0699, 0.37525, 13.7256, -8.68007, -3.62475, 15.4756, -15.1801, -3.62475, 23.4756, -8.68007, -3.62475, 23.4756, -4.68007, 0.37525, 15.4756, -4.68007, 0.37525, 17.2256, 11.5699, 0.37525, 17.2256, 11.5699, 0.37525, 15.2256)
@@ -82,14 +57,11 @@ _data = {
 
 [node name="Node3D" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_6m56o")
-
 [node name="Key" parent="." instance=ExtResource("3_vxp2g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.47579, 0.0820169, 1.62843)
 
 [node name="Player" parent="." instance=ExtResource("1_uign1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.88973, 0.936537, 10.3286)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.88973, 14.6879, 10.3286)
 
 [node name="mirror" parent="." instance=ExtResource("4_mlytl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.42467, 1.41484, -13.1926)
@@ -214,3 +186,6 @@ end_position = Vector3(-3.33956, 0.636581, 0.343028)
 [node name="NavigationNPC" parent="." instance=ExtResource("8_6m56o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.49708, 1.17352, -0.0157256)
 motion_mode = 1
+
+[node name="OldHouse" parent="." instance=ExtResource("8_aalo8")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -26.34, 15.2996, 1.06579)
