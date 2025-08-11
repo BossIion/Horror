@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cmnlg4ugunrmg"]
+
+[resource]
+albedo_color = Color(1, 0, 0, 0.356863)
+emission_enabled = true
+emission = Color(0.821911, 2.62313e-06, 7.70092e-07, 1)
+emission_energy_multiplier = 7.0
+billboard_keep_scale = true

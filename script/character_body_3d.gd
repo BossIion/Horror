@@ -25,10 +25,14 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		if $Walk.has_stream_playback():
+			pass
+		else:
+			$Walk.play()
 	else:
+		$Walk.stop()
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
 	move_and_slide()
 
 	# Check every frame if mouse capture/release worked
@@ -67,8 +71,10 @@ func _mouse_movement(event: InputEvent) -> void:
 func sprint():
 	if Input.is_action_just_pressed("shift"):
 		SPEED = 5
+		$Walk.pitch_scale = 2.5
 	if Input.is_action_just_released("shift"):
 		SPEED = 3
+		$Walk.pitch_scale = 1.0
 func _input(event: InputEvent) -> void:
 	# Call mouse movement handler
 	#check_for_shooting()
