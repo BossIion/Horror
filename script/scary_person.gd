@@ -13,6 +13,7 @@ func die(body):
 		get_tree().reload_current_scene()
 		if Input.is_anything_pressed() == true:
 			pass
+
 func _on_scary_body_entered(body: CharacterBody3D) -> void:
 	die(body)
 func follow_player(delta):
