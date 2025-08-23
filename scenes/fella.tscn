@@ -9,13 +9,17 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.306129, 2.93702, 0.12
 
 [node name="Skeleton3D" parent="Armature" index="0"]
 bones/0/position = Vector3(-0.796738, -0.232869, -0.0684159)
-bones/4/rotation = Quaternion(0, 1.19209e-07, 0, 1)
-bones/5/rotation = Quaternion(0.992168, 0.0190834, 0.0316098, 0.119333)
+bones/1/rotation = Quaternion(0, 0, 0.035067, 0.999385)
+bones/4/rotation = Quaternion(-3.54681e-09, 1.19156e-07, -0.0297528, 0.999557)
+bones/5/rotation = Quaternion(0.991697, 0.0360346, 0.0336443, 0.118775)
 bones/8/rotation = Quaternion(0.688219, 0.724498, 0.0381539, -0.00118398)
-bones/9/rotation = Quaternion(-0.996339, 0.0153861, -0.0407106, 0.0735806)
+bones/9/rotation = Quaternion(-0.996433, -0.00704091, -0.0390443, 0.0744782)
 bones/13/rotation = Quaternion(0.99977, 0.00965782, -0.000269075, -0.0191458)
 bones/14/rotation = Quaternion(0.00241547, 9.44062e-05, -0.000233829, 0.999997)
 bones/16/rotation = Quaternion(0.995894, 0.00557495, 0.0903363, -0.00204363)
+
+[node name="Cube" parent="Armature/Skeleton3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0787565, 0, 0)
 
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "Idle"
