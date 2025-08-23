@@ -23,6 +23,9 @@ func follow_player(delta):
 	var dirVector = (player.global_position - $Scary3.global_position).normalized()
 	print(dirVector)
 	dirVector[1] = 0
+	
+	$Scary3.global_position = $Scary3.global_position + (dirVector * enemySpeed/4000)
+	
 	$Scary3.global_position = $Scary3.global_position + (dirVector * enemySpeed/10000)
 func _ready() -> void:
 	pass 
