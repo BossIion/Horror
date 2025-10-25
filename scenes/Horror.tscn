@@ -247,7 +247,7 @@ transform = Transform3D(0.00117764, 0, 27.7452, 0, 6.70629, 0, -0.217655, 0, 0.1
 use_collision = true
 
 [node name="Door" parent="NavigationRegion3D" instance=ExtResource("3_mlytl")]
-transform = Transform3D(0.0113935, 0, 0.999935, 0, 1, 0, -0.999935, 0, 0.0113935, 3.92437, 0.113381, 7.29952)
+transform = Transform3D(0.0113961, 0, 0.999935, 0, 1, 0, -0.999935, 0, 0.0113961, 3.92437, 0.113381, 7.29952)
 
 [node name="DoorSwing" type="AnimationPlayer" parent="NavigationRegion3D/Door"]
 libraries = {

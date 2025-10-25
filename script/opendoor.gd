@@ -1,8 +1,8 @@
-
+#THIS ISN{TLOADING
 extends Node3D
 var animation_player: AnimationPlayer
 func _ready():
-	animation_player = $DoorSwing
+	animation_player = $"DoorSwing"
 	$DoorArea.area_entered.connect(_on_area_entered)
 func _on_area_entered(area):
 	if area.name == "Key":
