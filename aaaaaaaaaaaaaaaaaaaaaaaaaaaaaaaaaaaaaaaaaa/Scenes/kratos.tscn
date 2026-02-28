@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk1npk36s6bhr"]
+
+[ext_resource type="PackedScene" uid="uid://cs1shx7fc7o8e" path="res://Assets/Kratos.glb" id="1_800qw"]
+
+[node name="Kratos" instance=ExtResource("1_800qw")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/4/rotation = Quaternion(-0.109162, 0.908407, 0.220889, -0.337771)
+bones/5/rotation = Quaternion(0.165136, 0.824587, -0.414679, 0.347602)
+bones/7/rotation = Quaternion(0.0971623, 0.908867, -0.269357, -0.30326)
+bones/8/rotation = Quaternion(0.123056, 0.864166, -0.359658, 0.329727)
+bones/10/position = Vector3(6.74045e-08, -0.240041, -0.128507)
+bones/10/rotation = Quaternion(0.791423, 0.0146484, 0.0402256, -0.609768)
+bones/11/rotation = Quaternion(-0.20988, -0.428423, 0.490273, 0.729408)
+bones/12/rotation = Quaternion(0.46483, 0.0431259, 0.188849, 0.86395)
+bones/18/position = Vector3(-5.55883e-09, -0.345251, 0.187824)
+bones/18/rotation = Quaternion(0.068141, 0.69062, 0.712651, -0.102611)
+bones/19/rotation = Quaternion(-0.578453, 0.722176, -0.0984694, 0.366276)
+bones/20/rotation = Quaternion(0.460864, -0.0600167, -0.25479, 0.847989)
+bones/22/rotation = Quaternion(-0.000647575, 0.99873, 0.0122064, -0.0488725)
+bones/23/rotation = Quaternion(-0.00148715, 0.99786, -0.0178026, -0.062894)

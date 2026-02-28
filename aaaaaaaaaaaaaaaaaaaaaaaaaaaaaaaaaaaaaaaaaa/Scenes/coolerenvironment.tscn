@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://da8mmcedffvu6"]
+
+[ext_resource type="PackedScene" uid="uid://dt6q8bha66hau" path="res://coolerenvironment.glb" id="1_bm68c"]
+
+[node name="coolerenvironment" instance=ExtResource("1_bm68c")]
